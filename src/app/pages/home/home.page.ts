@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, IonRouterOutlet } from '@ionic/angular';
-import { MyModalComponent } from '../../components/my-modal/my-modal.component';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +8,10 @@ import { MyModalComponent } from '../../components/my-modal/my-modal.component';
 })
 export class HomePage {
 
-  constructor(
-    private modalController: ModalController,
-    private routerOutlet: IonRouterOutlet) {}
+  constructor(private navController: NavController) {}
 
-  async showModal() {
-    const topicOverviewModal = await this.modalController.create({
-      component: MyModalComponent,
-      swipeToClose: true,
-      presentingElement: this.routerOutlet.nativeEl
-    });
-    return await topicOverviewModal.present();
+  async openPage() {
+    await this.navController.navigateForward('/about');
   }
 
 }
