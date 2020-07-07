@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from '@ionic/angular';
+import { NavController, ModalController, mdTransitionAnimation } from '@ionic/angular';
 import { MyModalComponent } from '../../components/my-modal/my-modal.component';
 
 @Component({
@@ -12,7 +12,9 @@ export class HomePage {
   constructor(private navController: NavController, private modalController: ModalController) {}
 
   async openPage() {
-    await this.navController.navigateForward('/about');
+    await this.navController.navigateForward('/about', {
+      animation: mdTransitionAnimation
+    });
   }
 
   async openModal() {
