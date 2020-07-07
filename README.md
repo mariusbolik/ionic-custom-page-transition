@@ -1,5 +1,5 @@
 # Ionic 5 & Angular 9 App
-This is an sample Ionic App made with Ionic 5 and Angular 9
+This is an sample Ionic App made with Ionic 5 and Angular 10
 
 Install node modules:
 ```bash
