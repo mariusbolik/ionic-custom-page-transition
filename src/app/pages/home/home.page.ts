@@ -11,10 +11,14 @@ export class HomePage {
 
   constructor(private navController: NavController, private modalController: ModalController) {}
 
-  async openPage() {
+  async openPageWithCustomTransition() {
     await this.navController.navigateForward('/about', {
       animation: mdTransitionAnimation
     });
+  }
+
+  async openPage() {
+    await this.navController.navigateForward('/details');
   }
 
   async openModal() {
